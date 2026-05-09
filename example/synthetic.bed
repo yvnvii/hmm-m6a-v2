@@ -1,0 +1,5 @@
+chr1_synth	0	1200	synth_tx1	.	+
+chr2_synth	0	1100	synth_tx2	.	+
+chr3_synth	0	900	synth_tx3	.	-
+chr4_synth	0	950	synth_tx4	.	+
+chr5_synth	0	850	synth_tx5	.	+

@@ -1,0 +1,6 @@
+This directory is intended for large public reference files (e.g. mm10.fa,
+GENCODE GTFs) that the package consumes but does not bundle. The contents
+of this directory are gitignored except for this placeholder.
+
+See the "Reference data" section of the top-level README for the exact
+files and download URLs.
