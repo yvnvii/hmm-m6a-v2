@@ -136,41 +136,10 @@ df = call_sites(region_obs, params, tau=0.8, n_min=10)
 print(df[df["call"]])
 ```
 
-## Reproducing the paper benchmark
+## Reproducing the manuscript benchmark validation
 
 The synthetic-data validation notebook lives in `notebooks/m6a_hmm.ipynb`.
 Open in Jupyter and run all cells; with the published seeds, all numbers
-in the manuscript (Tables 1-5 and Figures 1-2) reproduce exactly.
+in the manuscript reproduce exactly.
 
-## Layout
 
-```
-hmm-m6a/
-├── pyproject.toml
-├── README.md
-├── LICENSE
-├── src/hmm_m6a/
-│   ├── __init__.py        public API
-│   ├── hmm.py             beta-binom PMF, FB, Viterbi, posterior
-│   ├── mle.py             weighted MLE for (mu, kappa)
-│   ├── train.py           Baum-Welch with state-ordering constraint
-│   ├── pileup.py          BAM + FASTA -> per-A counts and DRACH
-│   ├── calling.py         posterior thresholding
-│   └── cli.py             `hmm-m6a` command-line interface
-├── tests/
-│   └── test_hmm.py
-├── notebooks/
-│   └── m6a_hmm.ipynb      validation notebook from the paper
-└── docs/
-    └── methods.md         brief methods summary
-```
-
-## Citation
-
-If you use this code, please cite:
-
-> Ogawa, Y. *A Hidden Markov Model framework for m⁶A detection from GLORI-seq.* (2025).
-
-## License
-
-MIT, see `LICENSE`.
