@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hmm-m6a"
+version = "0.1.0"
+description = "Per-nucleotide hidden Markov model for m6A detection from GLORI-seq"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Yuki Ogawa", email = "yo2368@columbia.edu" }]
+keywords = ["bioinformatics", "m6A", "GLORI", "HMM", "RNA modification"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scipy>=1.11",
+    "pysam>=0.22",
+    "pyfaidx>=0.7",
+    "tqdm>=4.65",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "pytest-cov", "ruff", "mypy"]
+plot = ["matplotlib>=3.7", "scikit-learn>=1.3"]
+
+[project.scripts]
+hmm-m6a = "hmm_m6a.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/yvnvii/hmm-m6a"
+Issues = "https://github.com/yvnvii/hmm-m6a/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hmm_m6a"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
